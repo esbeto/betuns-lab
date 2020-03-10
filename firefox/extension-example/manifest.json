@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Extension Example",
+  "version": "1.0",
+  "description": "Adds style and js improvements to [webapp].",
+  "content_scripts": [
+    {
+      "matches": ["*://*.example.com/*"],
+      "js": ["scripts.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "applications": {
+    "gecko": {
+      "id": "es.beto.example@gmail.com"
+    }
+  }
+}
