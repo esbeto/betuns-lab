@@ -51,7 +51,7 @@ async function chunks(values, size) {
 
   let results = [];
   for (const chunk of chunks) {
-    const result = await Promise.all(chunk.map((val) => p(val)))
+    const result = await Promise.all(chunk.map((val) => p(val)));
     results = [...results, ...result];
   }
   return results;
