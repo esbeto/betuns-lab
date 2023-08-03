@@ -47,3 +47,11 @@ Using video filters:
 ```
 ffmpeg -i input.mp4 -vf "scale=iw/2:ih/2" output.mp4
 ```
+
+### Speed-up video by 2x
+
+Using video filters:
+
+```
+ffmpeg -i input.mp4 -vf "setpts=0.5*PTS" output.mp4
+```
