@@ -85,8 +85,8 @@ preexec() {
 }
 
 # Bind Option (Alt) + Arrow keys for word navigation in Alacritty
-bindkey '\e[1;5D' backward-word  # Option + Left Arrow
-bindkey '\e[1;5C' forward-word   # Option + Right Arrow
+bindkey '\e[1;3D' backward-word  # Option + Left Arrow
+bindkey '\e[1;3C' forward-word   # Option + Right Arrow
 ```
 
 Using a fast terminal emulator like Alacritty or Warp helps too.
@@ -105,16 +105,6 @@ style = "ExtraLight"
 
 [font.bold]
 style = "Light"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;5D"
-key = "Left"
-mods = "Option"
-
-[[keyboard.bindings]]
-chars = "\u001B[1;5C"
-key = "Right"
-mods = "Option"
 
 [[keyboard.bindings]]
 action = "CreateNewWindow"
