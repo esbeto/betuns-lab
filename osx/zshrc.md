@@ -8,29 +8,25 @@ This is my current .zshrc file. It includes most of the features that I get from
 oh-my-zsh with an understandable speed sacrifice.
 
 ```bash
+# Measure shell performance
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# Autocompletion
+# Autocompletions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-# Load and initialize compinit
 autoload -Uz compinit
 compinit
 
-# Enable substitution in the prompt.
-setopt prompt_subst
-
-# Function to get the current branch name.
+# Git details in prompt
 function current_branch() {
   git branch --show-current 2> /dev/null
 }
 
-# Find and set branch name variable if in git repository.
 function git_branch_name() {
   branch=$(current_branch)
   if [[ -n $branch ]]; then
@@ -53,19 +49,19 @@ function set_prompt() {
 }
 
 # Set prompt dynamically
+setopt prompt_subst
 autoload -U add-zsh-hook
 add-zsh-hook chpwd set_prompt
 set_prompt
 
-# Z jump
+# Z jump (brew install z)
 . /opt/homebrew/etc/profile.d/z.sh
 
-# ZSH plugins
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# or source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ZSH plugins (brew install zsh-autosuggestions zsh-syntax-highlighting)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Git aliases
+# Aliases
 alias g="git"
 alias gst="git status"
 alias gc="git commit"
