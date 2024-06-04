@@ -93,6 +93,7 @@ Using a fast terminal emulator like Alacritty or Warp helps too.
 
 This is my Alacritty config file
 ```toml
+# ~/.config/alacritty/alacritty.toml
 import = ["~/.alacritty-colorscheme/themes/one_dark.toml"]
 
 [font]
