@@ -83,4 +83,48 @@ alias la="ls -lah"
 preexec() {
   echo -ne "\033]0;$1 - ${PWD##*/}\007"
 }
+
+# Bind Option (Alt) + Arrow keys for word navigation in Alacritty
+bindkey '\e[1;5D' backward-word  # Option + Left Arrow
+bindkey '\e[1;5C' forward-word   # Option + Right Arrow
+```
+
+Using a fast terminal emulator like Alacritty or Warp helps too.
+
+This is my Alacritty config file
+```toml
+import = ["~/.alacritty-colorscheme/themes/one_dark.toml"]
+
+[font]
+size = 17
+
+[font.normal]
+family = "JetBrains Mono"
+style = "ExtraLight"
+
+[font.bold]
+style = "Light"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5D"
+key = "Left"
+mods = "Option"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5C"
+key = "Right"
+mods = "Option"
+
+[[keyboard.bindings]]
+action = "CreateNewWindow"
+key = "T"
+mods = "Command"
+
+[window.dimensions]
+columns = 110
+lines = 40
+
+[window.padding]
+x = 16
+y = 16
 ```
