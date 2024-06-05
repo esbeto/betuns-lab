@@ -14,6 +14,11 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
+# Increase history size
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
 # Autocompletions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -70,6 +75,8 @@ alias gl="git pull"
 alias gsw="git switch"
 alias gpf="git push --force-with-lease"
 alias groh='git reset --hard origin/$(current_branch)'
+alias glog='git log --oneline --decorate --graph'
+alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
 alias gg="lazygit"
 alias rebase_main="git rebase -i origin/main"
@@ -78,6 +85,7 @@ alias rebase_develop="git rebase -i origin/develop"
 alias ls="ls --color"
 alias ll="ls -lh"
 alias la="ls -lah"
+alias history="history 1 | fzf"
 
 # Show current command and directory in the title bar.
 preexec() {
@@ -87,6 +95,12 @@ preexec() {
 # Bind Option (Alt) + Arrow keys for word navigation in Alacritty
 bindkey '\e[1;3D' backward-word  # Option + Left Arrow
 bindkey '\e[1;3C' forward-word   # Option + Right Arrow
+
+# FZF
+source <(fzf --zsh)
+
+# Allow mouse wheel scrolling in less
+export LESS=-R
 ```
 
 Using a fast terminal emulator like Alacritty or Warp helps too.
