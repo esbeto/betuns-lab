@@ -77,6 +77,7 @@ alias gpf="git push --force-with-lease"
 alias groh='git reset --hard origin/$(current_branch)'
 alias glog='git log --oneline --decorate --graph'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+alias gpsup='git push --set-upstream origin $(current_branch)'
 
 alias gg="lazygit"
 alias rebase_main="git rebase -i origin/main"
