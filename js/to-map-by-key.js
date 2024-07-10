@@ -26,3 +26,29 @@ console.log(dict);
 // Useful for quick lookups without using Array.prototype.find
 console.log(dict["b1c2d3"]);
 // => { id: 'b1c2d3', value: 0 }
+
+// ES2024 native Object.groupBy and Map.groupBy
+const groups = Object.groupBy(options, ({id}) => id);
+
+console.log(groups);
+// =>
+//  {
+//    a1b2c3: [
+//      {
+//        id: "a1b2c3",
+//        value: 8
+//      }
+//    ],
+//    b1c2d3: [
+//      {
+//        id: "b1c2d3",
+//        value: 0
+//      }
+//    ],
+//    c1d2e3: [
+//      {
+//        id: "c1d2e3",
+//        value: 18
+//      }
+//    ]
+//  }
