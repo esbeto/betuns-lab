@@ -80,6 +80,8 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gpsup='git push --set-upstream origin $(current_branch)'
 
 alias gg="lazygit"
+alias gdw="git diff | diff-so-fancy | less --tabs=4 -RX"
+alias gdws="git diff --staged | diff-so-fancy | less --tabs=4 -RX"
 alias rebase_main="git rebase -i origin/main"
 alias rebase_master="git rebase -i origin/master"
 alias rebase_develop="git rebase -i origin/develop"
