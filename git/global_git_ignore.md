@@ -1,8 +1,8 @@
 # Global Git Ignore
 
-I usually like to add a .TODO file on my projects to keep track locally of what I'm focused on now.
+I usually like to add a `.TODO` file on my projects to keep track locally of what I'm focused on now. This works in conjunction with Fabio Spampinato's [Todo+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-todo-plus) VSCode extension
 
-To achieve this without having it bother you in git add a global git ignore file
+To achieve this without having this bother you in your git history, simply add a global `gitignore` file
 
 ```bash
 $ touch ~/.gitignore
