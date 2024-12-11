@@ -90,15 +90,13 @@ Use the following `src/lib/components/Icon.svelte` component to render your SVGs
 Final note: Just make sure to have a sr-only class in your global CSS. Here's an example:
 
 ```css
-.sr-only {
-  border: 0;
+.sr-only:not(:focus):not(:active) {
   clip-path: inset(50%);
   clip: rect(0 0 0 0);
   height: 1px;
-  margin: -1px;
   overflow: hidden;
-  padding: 0;
   position: absolute;
+  white-space: nowrap;
   width: 1px;
 }
 ```
