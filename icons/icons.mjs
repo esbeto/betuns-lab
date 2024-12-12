@@ -7,7 +7,7 @@ import { optimize } from "svgo";
 
 export async function createIconPack({
   inputDir = "../static/icons",
-  outputFile = "../static/icon-pack.svg",
+  outputFile = "../src/icon-pack.svg",
   outputTypesFile = "../src/lib/icons.ts",
 }) {
   console.log(`📦 Packing ${inputDir.replace("../", "")}*.svg`);
@@ -90,7 +90,7 @@ export async function createIconPack({
 /** @returns {import("vite").Plugin} */
 export function iconPackPlugin({
   inputDir = "../static/icons/",
-  outputFile = "../static/icon-pack.svg",
+  outputFile = "../src/icon-pack.svg",
   outputTypesFile = "../src/lib/icons.ts",
 } = {}) {
   const inputPath = "static/icons";
