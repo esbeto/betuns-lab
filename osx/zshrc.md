@@ -60,7 +60,8 @@ add-zsh-hook chpwd set_prompt
 set_prompt
 
 # Z jump (brew install z)
-. /opt/homebrew/etc/profile.d/z.sh
+# . /opt/homebrew/etc/profile.d/z.sh
+. /usr/local/etc/profile.d/z.sh # Possibly Intel
 
 # ZSH plugins (brew install zsh-autosuggestions zsh-syntax-highlighting)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -114,6 +115,7 @@ https://github.com/alacritty/alacritty-theme
 This is my Alacritty config file
 ```toml
 # ~/.config/alacritty/alacritty.toml
+[general]
 import = ["~/.config/alacritty/themes/themes/one_dark.toml"]
 
 [font]
