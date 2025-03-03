@@ -108,10 +108,13 @@ export LESS=-R
 
 Using a fast terminal emulator like Alacritty or Warp helps too.
 
+Install alacritty themes:
+https://github.com/alacritty/alacritty-theme
+
 This is my Alacritty config file
 ```toml
 # ~/.config/alacritty/alacritty.toml
-import = ["~/.alacritty-colorscheme/themes/one_dark.toml"]
+import = ["~/.config/alacritty/themes/themes/one_dark.toml"]
 
 [font]
 size = 17
