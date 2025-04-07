@@ -100,6 +100,13 @@ preexec() {
 bindkey '\e[1;3D' backward-word  # Option + Left Arrow
 bindkey '\e[1;3C' forward-word   # Option + Right Arrow
 
+# Bind Up/Down arrows to prefix-based history search
+autoload -U up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
 # FZF
 source <(fzf --zsh)
 
